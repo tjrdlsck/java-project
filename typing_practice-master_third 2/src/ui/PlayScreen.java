@@ -33,7 +33,7 @@ public class PlayScreen extends JFrame {
             updateSentences(); // 초기 문장 설정
             startTimers(); // 타이머 시작
             calculator.start(); // 계산기 시작
-            inputFields[0].requestFocusInWindow(); // 첫 번째 입력 필드에 포커스 설정
+            SwingUtilities.invokeLater(() -> inputFields[0].requestFocusInWindow()); // 첫 번째 입력 필드에 포커스 설정
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "파일을 읽는 중 오류가 발생했습니다."); // 오류 메시지를 표시합니다.
             this.dispose(); // 창을 닫습니다.
